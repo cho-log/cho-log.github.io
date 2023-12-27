@@ -2410,6 +2410,10 @@ ol {
   margin-bottom: 30px;
 }
 
+.features .coming-soon i {
+  background-color: #0a361066;
+}
+
 .features .single-feature h3 {
   font-size: 18px;
   font-weight: 500;
@@ -4555,7 +4559,7 @@ blockquote span {
 }
 
 .footer .footer-top {
-  padding: 100px 0;
+  padding: 0 0 20px 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

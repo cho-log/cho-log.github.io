@@ -25,11 +25,10 @@ Author: GrayGrids
     var logo = document.querySelector(".navbar-brand img");
     if (window.pageYOffset > sticky) {
       header_navbar.classList.add("sticky");
-      logo.src = "https://avatars.githubusercontent.com/u/141792611?s=400&v=4";
+      logo.src = "assets/images/logo/logo.png";
     } else {
       header_navbar.classList.remove("sticky");
-      logo.src =
-        "https://nextstep-storage.s3.ap-northeast-2.amazonaws.com/57acd465c8584bf598de645e72e24b76";
+      logo.src = "assets/images/logo/logo_white.png";
     }
 
     // show or hide the back-top-top button
