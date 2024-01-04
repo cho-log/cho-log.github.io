@@ -1060,7 +1060,7 @@ ol {
 }
 
 .section-title h3 {
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 600;
   display: block;
   margin-bottom: 8px;
@@ -1285,6 +1285,11 @@ ol {
   z-index: 1;
   margin-right: 7px;
   overflow: hidden;
+}
+
+.button .coming-soon {
+  background-color: #0a361066;
+  pointer-events: none;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
