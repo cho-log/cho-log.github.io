@@ -4569,27 +4569,27 @@ blockquote span {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer .footer-top {
-    padding: 80px 0;
-    padding-top: 40px;
+    /* padding: 80px 0;
+    padding-top: 40px; */
   }
 }
 
 @media (max-width: 767px) {
   .footer .footer-top {
-    padding: 60px 0;
-    padding-top: 20px;
+    /* padding: 60px 0;
+    padding-top: 20px; */
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .footer .single-footer {
-    margin-top: 40px;
+    /* margin-top: 40px; */
   }
 }
 
 @media (max-width: 767px) {
   .footer .single-footer {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     text-align: center;
   }
 }
