@@ -16,6 +16,7 @@ import Contact from "../components/Contact";
 export default function Home() {
   useEffect(() => {
     // 서버 사이드 렌더링에서는 실행되지 않음
+
     require('bootstrap');
   }, []);
 
