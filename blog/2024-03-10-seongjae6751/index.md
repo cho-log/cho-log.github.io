@@ -1,6 +1,6 @@
 ---
 slug: seongjae6751
-title: BCSDLab(한기대 동아리) 김성재님 참여 후기
+title: BCSDLab 김성재님 참여 후기
 authors: [seongjae6751]
 tags: [후기, BCSDLab]
 ---

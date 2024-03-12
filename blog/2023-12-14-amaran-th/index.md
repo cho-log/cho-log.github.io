@@ -1,6 +1,6 @@
 ---
 slug: amaranth
-title: BDD(부산대 스터디) 송세연님 운영 후기
+title: BDD 송세연님 운영 후기
 authors: [amaran-th]
 tags: [후기, 운영후기, BDD]
 ---

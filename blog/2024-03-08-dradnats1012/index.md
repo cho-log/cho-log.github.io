@@ -1,6 +1,6 @@
 ---
 slug: dradnats1012
-title: BCSDLab(한기대 동아리) 허준기님 참여 후기
+title: BCSDLab 허준기님 참여 후기
 authors: [dradnats1012]
 tags: [후기, BCSDLab]
 ---

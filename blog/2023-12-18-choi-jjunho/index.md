@@ -1,6 +1,6 @@
 ---
 slug: junho
-title: BCSDLab(한기대 동아리) 최준호님 운영 후기
+title: BCSDLab 최준호님 운영 후기
 authors: [choi-jjunho]
 tags: [후기, 운영후기, BCSDLab]
 ---

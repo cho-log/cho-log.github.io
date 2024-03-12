@@ -1,6 +1,6 @@
 ---
 slug: invidam
-title: BCSDLab(한기대 동아리) 박한수님 참여 후기
+title: BCSDLab 박한수님 참여 후기
 authors: [invidam]
 tags: [후기, BCSDLab]
 ---
