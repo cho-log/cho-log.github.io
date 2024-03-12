@@ -8,7 +8,7 @@ sidebar_position: 7
 
 
 
-[spring-core-1](./../../spring-core-1)에서는 `@Component`, `@Autowired` 어노테이션을 사용해 스프링 빈을 생성하고 빈간 의존성을 주입하는 방법을 익혔습니다.
+[spring-core-1](spring-core-2.md)에서는 `@Component`, `@Autowired` 어노테이션을 사용해 스프링 빈을 생성하고 빈간 의존성을 주입하는 방법을 익혔습니다.
 
 이 문서에서는 Java 코드와 스프링이 제공하는 어노테이션을 사용해 스프링 컨테이너를 정의하는 법을 알아봅니다.
 
