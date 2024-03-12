@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcholog_docu=self.webpackChunkcholog_docu||[]).push([[4232],{3949:l=>{l.exports=JSON.parse('{"label":"BDD","permalink":"/blog/tags/bdd","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcholog_docu=self.webpackChunkcholog_docu||[]).push([[9059],{9059:o=>{o.exports=JSON.parse('{"permalink":"/blog/tags/\ud6c4\uae30","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

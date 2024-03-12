@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcholog_docu=self.webpackChunkcholog_docu||[]).push([[3420],{1490:l=>{l.exports=JSON.parse('{"label":"BCSDLab","permalink":"/blog/tags/bcsd-lab","allTagsPath":"/blog/tags","count":4,"unlisted":false}')}}]);

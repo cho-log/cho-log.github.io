@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcholog_docu=self.webpackChunkcholog_docu||[]).push([[1991],{9775:o=>{o.exports=JSON.parse('{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

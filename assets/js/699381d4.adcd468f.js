@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcholog_docu=self.webpackChunkcholog_docu||[]).push([[3657],{7036:l=>{l.exports=JSON.parse('{"label":"\ud6c4\uae30","permalink":"/blog/tags/\ud6c4\uae30","allTagsPath":"/blog/tags","count":5,"unlisted":false}')}}]);
