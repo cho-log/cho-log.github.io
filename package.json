@@ -17,7 +17,6 @@
     "@docusaurus/core": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
     "@mdx-js/react": "^3.0.0",
-    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "clsx": "^2.0.0",
     "lineicons": "^1.0.3",
