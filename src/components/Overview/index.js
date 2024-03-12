@@ -1,7 +1,5 @@
 import clsx from 'clsx';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
 export default function Overview({ odd }) {
   return (
       <section id="overview" className={clsx({ 'section-bg-gray': odd, 'section-bg-white': !odd })}>

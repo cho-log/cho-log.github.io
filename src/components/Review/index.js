@@ -1,8 +1,5 @@
 import clsx from 'clsx';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.min.js';
-
 export default function Review({ odd }) {
   return (
       <section id="review" className={clsx({ 'section-bg-gray': odd, 'section-bg-white': !odd })}>

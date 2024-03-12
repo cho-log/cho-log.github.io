@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 
 import styles from './styles.module.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Contents({ odd }) {
   return (

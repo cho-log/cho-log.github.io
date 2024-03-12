@@ -1,6 +1,9 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import Header from "../components/Header";
 import Overview from "../components/Overview";
 import Contents from "../components/Contents";

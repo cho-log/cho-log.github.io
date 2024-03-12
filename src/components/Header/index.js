@@ -1,9 +1,6 @@
 import clsx from 'clsx';
 import styles from "./index.module.css";
 
-import '../../css/bootstrap.min.css';
-import '../../css/custom.css';
-
 export default function Header() {
   return (
       <header className={clsx('hero hero--primary page', styles.heroBanner)}>

@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'lineicons/web-font/lineicons.css';
 
 export default function Topic({ odd }) {
