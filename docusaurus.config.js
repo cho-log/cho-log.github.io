@@ -66,6 +66,7 @@ const config = {
     ({
       metadata: [
         {name: 'google-site-verification', content: '_QStgp4m7dNjR-TQeLEeFlHd3bJ0vIFEPHHCTUIrxPY'},
+        {name: 'naver-site-verification', content: 'a682b73de7b860f0225d1581a9a274e9536d500d'},
         {name: 'keywords', content: 'spring, java, study, project, learning, community, cho-log, cholog, 초록스터디, 초록'},
       ],
       // Replace with your project's social card
