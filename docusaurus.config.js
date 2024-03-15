@@ -64,6 +64,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {name: 'google-site-verification', content: '_QStgp4m7dNjR-TQeLEeFlHd3bJ0vIFEPHHCTUIrxPY'},
+        {name: 'keywords', content: 'spring, java, study, project, learning, community, cho-log, cholog, 초록스터디, 초록'},
+      ],
       // Replace with your project's social card
       image: 'img/logo.ico',
       colorMode: {
