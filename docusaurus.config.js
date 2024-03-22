@@ -65,7 +65,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-        {name: 'google-site-verification', content: '_QStgp4m7dNjR-TQeLEeFlHd3bJ0vIFEPHHCTUIrxPY'},
+        {name: 'google-site-verification', content: 'sqptK8Ke0EHOIa_bzf99cy3rp9S96paGlgtHZ0EMIWM'},
         {name: 'naver-site-verification', content: 'a682b73de7b860f0225d1581a9a274e9536d500d'},
         {name: 'keywords', content: 'spring, java, study, project, learning, community, cho-log, cholog, 초록스터디, 초록'},
       ],
