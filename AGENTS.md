@@ -12,6 +12,12 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - 토큰에 없는 임의의 헥스값·폰트 크기·radius를 사용하지 않는다. 새 값이 필요하면 먼저 `DESIGN.md`에 추가하고 `src/app/globals.css`의 `@theme inline` 블록에 토큰을 노출한 뒤 사용한다.
 - 컴포넌트 가이드(Buttons / Cards / Chips / Input Fields / Lists)는 `DESIGN.md`의 **Components** 절을 따른다.
 
+# 프로젝트 스킬
+
+- 공통 작업 절차는 `.agents/skills/<스킬 이름>/SKILL.md`에서 관리한다. Codex는 이 경로에서 프로젝트 스킬을 탐색한다.
+- 섹션을 새로 만들거나 스타일을 수정한 뒤, 또는 디자인 리뷰/토큰 점검 요청 시 `.agents/skills/design-review/SKILL.md`를 읽고 리뷰 절차를 따른다.
+- Claude 전용 에이전트 설정은 `.claude/agents/`에 유지하되 공통 스킬을 읽도록 연결한다. 리뷰 절차는 공통 스킬에서만 수정한다.
+
 # 병렬 작업 (워크트리)
 
 여러 작업을 동시에 진행하거나 실험적 변경을 메인과 분리하고 싶다는 얘기가 나오면, git worktree 사용을 안내한다(`claude --worktree <이름>`). 명령어·규칙·정리 방법은 `docs/WORKTREE.md`에 정리돼 있다. 워크트리 안의 변경은 **커밋해야만** 남으므로, 워크트리를 종료/정리하기 전 커밋 여부를 항상 확인한다.

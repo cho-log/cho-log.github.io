@@ -1,0 +1,4 @@
+interface:
+  display_name: "디자인 토큰 리뷰"
+  short_description: "DESIGN.md 기준으로 변경된 스타일의 토큰 준수 점검"
+  default_prompt: "$design-review로 현재 변경분이 DESIGN.md 토큰 명세를 지키는지 리뷰하고, 코드를 수정하지 말고 위반 사항과 수정 방법을 알려줘."
