@@ -17,7 +17,7 @@ export interface Lead {
   name: string;
   community: string;                   // 소속/모임 (예: "그리디", "SCG", "초록해듀오")
   university?: string;                 // 대학 (해듀오·연합은 없음)
-  year: number;                        // 활동 연도 (2024 | 2025 | 2026)
+  year: number;                        // 활동 연도 (2023 ~ 현재 연도)
   githubUrl: string;
   role: "lead" | "mentor" | "reviewer"; // 초록해듀오 = mentor, 리뷰어 = reviewer, 나머지 = lead
 }

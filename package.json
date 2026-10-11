@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/optimize-images.mjs",
+    "prebuild": "npm run validate:leads && node scripts/optimize-images.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "validate:leads": "node scripts/validate-leads.mjs",
+    "test:data": "node --test scripts/validate-leads.test.mjs",
     "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {

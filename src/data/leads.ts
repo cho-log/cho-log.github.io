@@ -3,6 +3,8 @@ import type { Lead } from "@/src/types";
 /**
  * 역대 스터디 리드 + 초록해듀오 멘토 + 스터디 리뷰어.
  * community = 소속/모임, university = 대학(해듀오·연합은 없음), role = lead | mentor | reviewer.
+ * 등록·수정 방법은 CONTRIBUTING.md 참고. 새 항목은 배열 끝에 추가하고 기존 ID는 유지한다.
+ * 신규 ID 권장: 깃허브아이디-활동연도-역할 (예: octocat-2026-lead).
  */
 export const leads: Lead[] = [
   {
