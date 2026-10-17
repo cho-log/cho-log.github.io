@@ -1,0 +1,50 @@
+name: 본인 활동 기록 삭제
+description: 삭제할 기존 활동 한 건을 지정합니다.
+title: "[활동 삭제] "
+labels: [archive-delete]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        본인의 기존 활동 기록 한 건을 삭제하는 폼입니다. 제출하면 자동으로 PR이 생성되고 운영진이 삭제 대상과 본인 요청 여부를 확인한 뒤 직접 머지합니다.
+        현재 기록에 적힌 GitHub 링크·모임명·활동 연도·역할을 그대로 입력해주세요.
+        사이트의 활동 기록을 삭제하더라도 과거 Git 변경 이력과 공개 이슈·PR은 남을 수 있습니다.
+        입력한 대상 정보도 공개 이슈와 PR에 남습니다. 공개해도 되는 내용만 작성해주세요.
+  - type: markdown
+    attributes:
+      value: "## 삭제할 기존 기록"
+  - type: input
+    id: existing-github-url
+    attributes:
+      label: 기존 GitHub 링크
+      description: 삭제할 기존 기록에 연결된 GitHub 프로필 링크를 그대로 적어주세요.
+      placeholder: https://github.com/your-account
+    validations:
+      required: true
+  - type: input
+    id: existing-community
+    attributes:
+      label: 기존 모임명
+      description: 삭제할 기존 기록에 적힌 동아리·모임명입니다.
+      placeholder: 그리디
+    validations:
+      required: true
+  - type: input
+    id: existing-year
+    attributes:
+      label: 기존 활동 연도
+      description: 삭제할 기존 기록에 적힌 연도를 숫자로 적어주세요.
+      placeholder: "2025"
+    validations:
+      required: true
+  - type: dropdown
+    id: existing-role
+    attributes:
+      label: 기존 역할
+      description: 삭제할 기존 기록에 적힌 역할입니다.
+      options:
+        - 초록스터디 리드
+        - 초록스터디 리뷰어
+        - 초록해듀오 멘토
+    validations:
+      required: true
