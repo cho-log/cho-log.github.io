@@ -13,7 +13,6 @@ export interface Program {
 
 /** 역대 스터디 리드 + 초록해듀오 멘토 + 스터디 리뷰어 */
 export interface Lead {
-  id: string;
   name: string;
   community: string;                   // 소속/모임 (예: "그리디", "SCG", "초록해듀오")
   university?: string;                 // 대학 (해듀오·연합은 없음)

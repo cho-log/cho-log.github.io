@@ -142,7 +142,7 @@ function deleteTarget(source, target) {
 
 function describeRecord(record) {
   const roleLabel = [...roles].find(([, value]) => value === record.role)?.[0] || record.role;
-  return `ID: ${record.id}\n실명: ${record.name}\n모임명: ${record.community}\n학교: ${record.university || "미기재"}\n활동 연도: ${record.year}\n역할: ${roleLabel}\nGitHub 링크: ${record.githubUrl}`;
+  return `실명: ${record.name}\n모임명: ${record.community}\n학교: ${record.university || "미기재"}\n활동 연도: ${record.year}\n역할: ${roleLabel}\nGitHub 링크: ${record.githubUrl}`;
 }
 
 async function run() {
@@ -163,18 +163,14 @@ async function run() {
   if (kind === "register") {
     const record = readDetails(answers, "", `https://github.com/${issue.user.login}`);
     const description = requiredAnswer(answers, "활동 설명");
-    const closing = source.match(/\r?\n\];\s*$/);
-    const ids = [...source.matchAll(/^\s+id: "l-(\d+)",?$/gm)].map(([, number]) => Number(number));
-    if (!source.includes("export const leads: Lead[] = [") || !closing || ids.length === 0) {
-      throw new Error("leads.ts의 배열 또는 기존 ID 형식을 읽을 수 없습니다. 운영진이 파일 구조를 확인해주세요.");
+    const closing = source.match(/\];\s*$/);
+    if (!source.includes("export const leads: Lead[] = [") || !closing) {
+      throw new Error("leads.ts의 배열을 읽을 수 없습니다. 운영진이 파일 구조를 확인해주세요.");
     }
-    const nextNumber = Math.max(...ids) + 1;
-    if (!Number.isSafeInteger(nextNumber)) throw new Error("기존 ID에서 다음 번호를 만들 수 없습니다. 운영진이 ID 형식을 확인해주세요.");
-    const entry = { id: `l-${String(nextNumber).padStart(2, "0")}`, ...record };
-    updated = source.slice(0, closing.index) + newline + `  ${renderRecord(entry, newline)},` + source.slice(closing.index);
+    updated = source.slice(0, closing.index).trimEnd() + newline + `  ${renderRecord(record, newline)},` + newline + source.slice(closing.index);
     sections = [
       "## 등록 정보",
-      reviewText(`실명: ${record.name}\n모임명: ${record.community}\n학교: ${record.university || "미기재"}\n활동 연도: ${record.year}\n역할: ${requiredAnswer(answers, "역할")}\nID: ${entry.id}`),
+      reviewText(`실명: ${record.name}\n모임명: ${record.community}\n학교: ${record.university || "미기재"}\n활동 연도: ${record.year}\n역할: ${requiredAnswer(answers, "역할")}`),
       "## 활동 설명", reviewText(description),
       "## 증빙 링크 (선택)", reviewText(answers.get("증빙 링크") || "미제공"),
     ];
@@ -187,8 +183,7 @@ async function run() {
     };
     const target = await findTarget(source, selector);
     if (kind === "update") {
-      const after = { ...target.record, ...readDetails(answers, "수정 후 ", requiredAnswer(answers, "수정 후 GitHub 링크")) };
-      if (!answers.get("수정 후 학교")) delete after.university;
+      const after = readDetails(answers, "수정 후 ", requiredAnswer(answers, "수정 후 GitHub 링크"));
       const description = requiredAnswer(answers, "수정 내용 설명");
       const lineStart = source.lastIndexOf("\n", target.start - 1) + 1;
       const indent = source.slice(lineStart, target.start).match(/^[ \t]*$/)?.[0] ?? "  ";
@@ -216,7 +211,7 @@ async function run() {
     ...sections,
     "## 운영진 검토",
     kind === "register"
-      ? "활동 사실, 본인 요청 여부, 중복 기록, 학교 표기와 증빙은 운영진이 직접 확인해주세요. 동시에 열린 등록 PR의 ID도 확인해주세요."
+      ? "활동 사실, 본인 요청 여부, 중복 기록, 학교 표기와 증빙은 운영진이 직접 확인해주세요."
       : "활동 사실, 본인 요청 여부, 대상 기록, 증빙과 등록 정책에 맞는지는 운영진이 직접 확인해주세요.",
     "설명·사유·증빙은 검토용이며 사이트 데이터에는 포함하지 않습니다. 운영진이 검토 후 직접 머지합니다.",
     `원본 이슈: ${issue.html_url}`,

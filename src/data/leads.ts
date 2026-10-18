@@ -6,7 +6,6 @@ import type { Lead } from "@/src/types";
  */
 export const leads: Lead[] = [
   {
-    id: "l-01",
     name: "최진영",
     community: "초록해듀오",
     year: 2024,
@@ -14,7 +13,6 @@ export const leads: Lead[] = [
     role: "mentor",
   },
   {
-    id: "l-02",
     name: "송세연",
     community: "BDD",
     university: "부산대",
@@ -23,7 +21,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-03",
     name: "최준호",
     community: "BCSDLab",
     university: "한국기술교육대",
@@ -32,7 +29,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-04",
     name: "송효섭",
     community: "LINKHU",
     university: "경희대",
@@ -41,7 +37,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-05",
     name: "윤가영",
     community: "ACC",
     university: "이화여대",
@@ -50,7 +45,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-06",
     name: "이재윤",
     community: "MJMJ",
     university: "명지대",
@@ -59,7 +53,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-07",
     name: "송지은",
     community: "솜프링",
     university: "동덕여대",
@@ -68,7 +61,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-08",
     name: "이한길",
     community: "LBP",
     university: "성공회대",
@@ -77,7 +69,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-09",
     name: "권예진",
     community: "슈벨롭 / 슈프링",
     university: "숭실대",
@@ -86,7 +77,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-10",
     name: "안석환",
     community: "러너즈",
     year: 2025,
@@ -94,7 +84,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-11",
     name: "이승용",
     community: "그리디",
     university: "세종대",
@@ -103,7 +92,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-12",
     name: "김수민",
     community: "그리디",
     university: "세종대",
@@ -112,7 +100,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-13",
     name: "홍혁준",
     community: "봄날의 첫 페이지 / 동네",
     university: "중앙대",
@@ -121,7 +108,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-14",
     name: "이영수",
     community: "PNC",
     university: "영남대",
@@ -130,7 +116,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-15",
     name: "이현수",
     community: "BCSDLab",
     university: "한국기술교육대",
@@ -139,7 +124,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-16",
     name: "이충안",
     community: "콩콩밥밥",
     university: "광운대",
@@ -148,7 +132,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-17",
     name: "명재위",
     community: "KUCC",
     university: "고려대",
@@ -157,7 +140,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-18",
     name: "이낙헌",
     community: "아벱",
     university: "연합",
@@ -166,7 +148,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-19",
     name: "김연수",
     community: "GDGoC",
     university: "이화여대",
@@ -175,7 +156,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-20",
     name: "이성우",
     community: "우아한명지코스",
     university: "명지대",
@@ -184,7 +164,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-21",
     name: "노주희",
     community: "SCG",
     university: "성균관대",
@@ -193,7 +172,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-22",
     name: "이진",
     community: "그리디",
     university: "세종대",
@@ -202,7 +180,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-23",
     name: "신혜빈",
     community: "그리디",
     university: "세종대",
@@ -211,7 +188,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-24",
     name: "정상희",
     community: "그리디",
     university: "세종대",
@@ -220,7 +196,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-25",
     name: "김민기",
     community: "그리디",
     university: "세종대",
@@ -229,7 +204,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-26",
     name: "박찬빈",
     community: "그리디",
     university: "세종대",
@@ -238,7 +212,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-27",
     name: "윤재홍",
     community: "그리디",
     university: "세종대",
@@ -247,7 +220,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-28",
     name: "정창우",
     community: "그리디",
     university: "세종대",
@@ -256,7 +228,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-29",
     name: "김범수",
     community: "그리디",
     university: "세종대",
@@ -265,7 +236,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-30",
     name: "심혁",
     community: "그리디",
     university: "세종대",
@@ -274,7 +244,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-31",
     name: "오지훈",
     community: "초록해듀오",
     year: 2025,
@@ -282,7 +251,6 @@ export const leads: Lead[] = [
     role: "mentor",
   },
   {
-    id: "l-32",
     name: "전석진",
     community: "초록해듀오",
     year: 2025,
@@ -290,7 +258,6 @@ export const leads: Lead[] = [
     role: "mentor",
   },
   {
-    id: "l-33",
     name: "한혜리",
     community: "초록해듀오",
     year: 2025,
@@ -298,7 +265,6 @@ export const leads: Lead[] = [
     role: "mentor",
   },
   {
-    id: "l-34",
     name: "신동훈",
     community: "SPICY",
     university: "충남대",
@@ -310,7 +276,6 @@ export const leads: Lead[] = [
   /* ── 2026.06 설문(구글폼) 취합 신규 인원 ─────────────────────── */
   // 신규 리드
   {
-    id: "l-35",
     name: "남해윤",
     community: "그리디",
     university: "세종대",
@@ -319,7 +284,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-36",
     name: "이승용",
     community: "그리디",
     university: "세종대",
@@ -328,7 +292,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-37",
     name: "원태연",
     community: "그리디",
     university: "세종대",
@@ -337,7 +300,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-38",
     name: "김주환",
     community: "그리디",
     university: "세종대",
@@ -346,7 +308,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-39",
     name: "김범수",
     community: "그리디",
     university: "세종대",
@@ -355,7 +316,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-40",
     name: "김주환",
     community: "그리디",
     university: "세종대",
@@ -364,7 +324,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-41",
     name: "안금서",
     community: "그리디",
     university: "세종대",
@@ -373,7 +332,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-42",
     name: "정상희",
     community: "그리디",
     university: "세종대",
@@ -382,7 +340,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-43",
     name: "송혜정",
     community: "그리디",
     university: "세종대",
@@ -391,7 +348,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-44",
     name: "김범수",
     community: "그리디",
     university: "세종대",
@@ -400,7 +356,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-45",
     name: "신혜빈",
     community: "그리디",
     university: "세종대",
@@ -409,7 +364,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-46",
     name: "임규영",
     community: "그리디",
     university: "세종대",
@@ -418,7 +372,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-47",
     name: "박찬빈",
     community: "그리디",
     university: "세종대",
@@ -427,7 +380,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-48",
     name: "신지우",
     community: "그리디",
     university: "세종대",
@@ -436,7 +388,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-49",
     name: "김의천",
     community: "그리디",
     university: "세종대",
@@ -445,7 +396,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-50",
     name: "허준기",
     community: "BCSDLab",
     university: "한국기술교육대",
@@ -454,7 +404,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-51",
     name: "최혜령",
     community: "그리디",
     university: "세종대",
@@ -463,7 +412,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-52",
     name: "정다빈",
     community: "그리디",
     university: "세종대",
@@ -472,7 +420,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-53",
     name: "이창근",
     community: "SCG",
     university: "성균관대",
@@ -481,7 +428,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-54",
     name: "조상준",
     community: "그리디",
     university: "세종대",
@@ -490,7 +436,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-55",
     name: "김준영",
     community: "SCG",
     university: "성균관대",
@@ -499,7 +444,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-56",
     name: "이승연",
     community: "SCG",
     university: "성균관대",
@@ -508,7 +452,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-57",
     name: "손준형",
     community: "SCG",
     university: "성균관대",
@@ -517,7 +460,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-58",
     name: "김시원",
     community: "SCG",
     university: "성균관대",
@@ -526,7 +468,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-59",
     name: "조성현",
     community: "완두콩",
     university: "단국대",
@@ -535,7 +476,6 @@ export const leads: Lead[] = [
     role: "lead",
   },
   {
-    id: "l-60",
     name: "원주영",
     community: "완두콩",
     university: "단국대",
@@ -544,7 +484,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-61",
     name: "최재영",
     community: "완두콩",
     university: "단국대",
@@ -553,7 +492,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-62",
     name: "김병웅",
     community: "완두콩",
     university: "단국대",
@@ -562,7 +500,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-63",
     name: "송제용",
     community: "SCG",
     university: "성균관대",
@@ -571,7 +508,6 @@ export const leads: Lead[] = [
     role: "reviewer",
   },
   {
-    id: "l-64",
     name: "조재중",
     community: "SCG",
     university: "성균관대",
