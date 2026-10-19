@@ -3,11 +3,11 @@
 초록은 '배움에서 나눔으로'를 슬로건으로 활동하는 개발자 커뮤니티입니다.
 좋은 교육 경험을 나누고 함께 성장하는 흐름을 만들어갑니다.
 
-[홈페이지](https://cho-log.github.io/) | [아카이브](https://cho-log.github.io/archive) | [기여 가이드](CONTRIBUTING.md)
+[홈페이지](https://cho-log.github.io/)
 
 ## 아카이브에 내 활동 기록 남기기
 
-초록스터디 리드와 리뷰어, 초록해듀오 멘토는 본인의 활동 기록을 등록하거나 기존 기록을 수정·삭제할 수 있습니다.
+초록스터디 리드와 리뷰어, 초록해듀오 멘토는 본인의 활동 기록을 [아카이브](https://cho-log.github.io/archive)에 등록하거나 기존 기록을 수정·삭제할 수 있습니다.
 
 1. [이슈 페이지](https://github.com/cho-log/cho-log.github.io/issues)에서 **New issue**를 선택합니다.
 2. 등록, 수정, 삭제 중 원하는 폼을 선택하고 내용을 작성합니다.
