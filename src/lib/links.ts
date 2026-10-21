@@ -2,6 +2,8 @@ export const SITE_LINKS = {
   applyForm: "https://forms.gle/f9LM5AepoE77xtW2A",
   discord: "https://discord.gg/6XkAFe8DwW",
   github: "https://github.com/cho-log",
+  archiveContributionGuide:
+    "https://github.com/cho-log/cho-log.github.io/blob/main/CONTRIBUTING.md",
   brunchIntro: "https://brunch.co.kr/@boorownie/9",
   projectDiscord:
     "https://discord.com/channels/1170170609511190528/1170171113544884345/1260437671852114033",

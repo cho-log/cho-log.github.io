@@ -1,6 +1,8 @@
 import { leads } from "@/src/data/leads";
 import type { Lead } from "@/src/types";
 import { SectionHeader } from "@/src/components/common/SectionHeader";
+import { Button } from "@/src/components/common/Button";
+import { SITE_LINKS } from "@/src/lib/links";
 import { LeadAvatar } from "./LeadAvatar";
 
 /* ── 연도별 그룹핑 (최신 연도 먼저, 그룹 내 이름 가나다순 정렬) ──── */
@@ -60,13 +62,23 @@ export function CommunityLeadsSection() {
   return (
     <section className="bg-background py-24">
       <div className="mx-auto max-w-5xl px-4 md:px-6">
-        <SectionHeader
-          eyebrow="PEOPLE"
-          title="함께한 모임 & 사람들"
-          description="스터디를 이끈 리드와 함께 도운 리뷰어"
-        />
+        <SectionHeader eyebrow="PEOPLE" title="함께한 모임 & 사람들" />
+        <div className="mt-md flex flex-col items-start gap-md md:flex-row md:items-center md:justify-between">
+          <p className="text-label-md font-normal text-on-surface-variant">
+            스터디를 이끈 리드와 함께 도운 리뷰어
+          </p>
+          <Button
+            href={SITE_LINKS.archiveContributionGuide}
+            external
+            variant="secondary"
+            size="sm"
+            className="shrink-0 text-label-md"
+          >
+            내 기록도 추가하기
+          </Button>
+        </div>
 
-        <div className="mt-10 flex flex-col gap-10">
+        <div className="mt-lg flex flex-col gap-10">
           {grouped.map(([year, yearLeads]) => (
             <div key={year}>
               <div className="mb-4 flex items-center gap-3">
