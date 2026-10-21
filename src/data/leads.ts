@@ -515,4 +515,12 @@ export const leads: Lead[] = [
     githubUrl: "https://github.com/m-a-king",
     role: "reviewer",
   },
+  {
+    name: "김수민",
+    community: "그리디",
+    university: "세종대",
+    year: 2024,
+    githubUrl: "https://github.com/boyekim",
+    role: "lead",
+  },
 ];
