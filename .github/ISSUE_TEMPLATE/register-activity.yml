@@ -1,0 +1,68 @@
+name: 본인 활동 등록
+description: 초록스터디 리드·리뷰어, 초록해듀오 멘토의 신규 활동 기록을 등록합니다.
+title: "[활동 등록] "
+labels: [archive-registration]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        아카이브에 기록하고 싶은 활동 한 건을 작성해주세요! 제출하면 자동으로 PR이 생성됩니다. 
+        이후 운영진이 활동 사실을 확인한 뒤 머지합니다. 만약 기재해주신 내용에서 수정이 필요한 부분이 있다면 Request Change를 남깁니다.
+        실명, 모임명, 활동 연도, 역할, 기재한 학교와 이 이슈 작성자의 GitHub 프로필이 사이트에 공개됩니다.
+        활동 설명과 증빙 링크를 포함한 입력 내용은 공개 이슈와 PR에 남습니다. 공개해도 되는 내용만 작성해주세요!
+  - type: input
+    id: name
+    attributes:
+      label: 실명
+      placeholder: 김초록
+    validations:
+      required: true
+  - type: input
+    id: community
+    attributes:
+      label: 모임명
+      description: 활동한 동아리·모임의 기존 표기를 사용해주세요. 초록해듀오 멘토는 초록해듀오로 적어주세요.
+      placeholder: 그리디
+    validations:
+      required: true
+  - type: input
+    id: university
+    attributes:
+      label: 학교
+      description: 기존 학교 표기를 사용해주세요(예시 세종대, 성균관대). 초록해듀오·연합 모임 등 학교를 기재하지 않는 활동은 비워두세요.
+      placeholder: 세종대
+    validations:
+      required: false
+  - type: input
+    id: year
+    attributes:
+      label: 활동 연도
+      description: 활동한 연도를 숫자로 적어주세요.
+      placeholder: "2026"
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: 역할
+      options:
+        - 초록스터디 리드
+        - 초록스터디 리뷰어
+        - 초록해듀오 멘토
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 활동 설명
+      description: 어느 모임에서 언제 어떤 역할로 활동했는지 간단하게 설명해주세요. 운영진의 PR 검토에 사용하며 사이트 데이터에는 넣지 않습니다.
+      placeholder: ex) 2026년 그리디에서 초록스터디 리드로 활동하며 스터디 진행과 미션 리뷰를 맡았습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 증빙 링크
+      description: (선택) 리뷰한 PR, 활동 회고 등 활동을 확인할 수 있는 링크가 있으면 적어주세요. 사이트 데이터에는 넣지 않습니다. 적어주실 경우 운영진이 원활하게 활동 내용을 확인할 수 있습니다.
+    validations:
+      required: false

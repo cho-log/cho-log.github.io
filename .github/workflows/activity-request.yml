@@ -1,0 +1,101 @@
+name: Activity request from issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions: {}
+
+concurrency:
+  group: archive-registration-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Checkout default branch
+        id: checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - name: Read current request
+        id: prepare
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        env:
+          REGISTRATION_EVENT_PATH: ${{ runner.temp }}/activity-registration-event.json
+        with:
+          script: |
+            const { prepare } = require('./.github/scripts/activity-request.cjs');
+            await prepare({ github, context, core });
+
+      - name: Setup Node
+        if: ${{ steps.prepare.outputs.eligible == 'true' }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+
+      - name: Install existing TypeScript parser for update or delete
+        if: ${{ steps.prepare.outputs.eligible == 'true' && steps.prepare.outputs.kind != 'register' }}
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Apply form answers to activity data
+        id: convert
+        if: ${{ steps.prepare.outputs.eligible == 'true' }}
+        env:
+          REGISTRATION_EVENT_PATH: ${{ runner.temp }}/activity-registration-event.json
+          ACTIVITY_PR_BODY_PATH: ${{ runner.temp }}/activity-registration-pr.md
+          ACTIVITY_ERROR_PATH: ${{ runner.temp }}/activity-request-error.txt
+          ACTIVITY_REQUEST_KIND: ${{ steps.prepare.outputs.kind }}
+        # 셸에는 고정 스크립트와 러너 경로만 전달한다. 본문은 JSON에서 읽는다.
+        run: GITHUB_EVENT_PATH="$REGISTRATION_EVENT_PATH" node scripts/register-activity.mjs
+
+      - name: Recheck request before creating a PR
+        id: check_request
+        if: ${{ steps.prepare.outputs.eligible == 'true' }}
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        env:
+          REQUEST_LABEL: ${{ steps.prepare.outputs.label }}
+          REQUEST_BRANCH: ${{ steps.prepare.outputs.branch }}
+        with:
+          script: |
+            const { recheck } = require('./.github/scripts/activity-request.cjs');
+            await recheck({ github, context, core });
+
+      - name: Create or update activity PR
+        id: create_pr
+        if: ${{ steps.check_request.outputs.eligible == 'true' }}
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.prepare.outputs.branch }}
+          base: ${{ github.event.repository.default_branch }}
+          add-paths: src/data/leads.ts
+          commit-message: 'feat: ${{ steps.prepare.outputs.kind }} activity from issue #${{ github.event.issue.number }}'
+          author: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
+          title: '활동 ${{ steps.prepare.outputs.action_label }} 요청 #${{ github.event.issue.number }}'
+          body-path: ${{ runner.temp }}/activity-registration-pr.md
+
+      - name: Notify issue of PR or failure
+        if: ${{ !cancelled() && steps.checkout.outcome == 'success' && (failure() || steps.create_pr.outputs.pull-request-url != '') }}
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        env:
+          RUN_STATUS: ${{ job.status }}
+          CONVERT_OUTCOME: ${{ steps.convert.outcome }}
+          PR_OUTCOME: ${{ steps.create_pr.outcome }}
+          REQUEST_ACTION: ${{ steps.prepare.outputs.action_label }}
+          REQUEST_ERROR: ${{ steps.check_request.outputs.reason || steps.prepare.outputs.reason }}
+          ACTIVITY_ERROR_PATH: ${{ runner.temp }}/activity-request-error.txt
+          PR_URL: ${{ steps.create_pr.outputs.pull-request-url }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            const { notify } = require('./.github/scripts/activity-request.cjs');
+            await notify({ github, context, core });

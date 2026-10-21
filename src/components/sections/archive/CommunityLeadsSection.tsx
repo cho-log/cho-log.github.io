@@ -90,8 +90,8 @@ export function CommunityLeadsSection() {
               </div>
 
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {yearLeads.map((lead) => (
-                  <LeadCard key={lead.id} lead={lead} />
+                {yearLeads.map((lead, index) => (
+                  <LeadCard key={index} lead={lead} />
                 ))}
               </div>
             </div>
