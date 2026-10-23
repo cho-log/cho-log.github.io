@@ -16,12 +16,12 @@ export const SITE_LINKS = {
   javaLearningTest: "https://github.com/cho-log/java-learning-test",
   springLearningTest: "https://github.com/cho-log/spring-learning-test",
   javaCalculatorMission:
-    "https://github.com/next-step/java-calculator-unit-playground",
+    "https://github.com/cho-log/java-calculator-unit-playground",
   javaRacingcarMission:
-    "https://github.com/next-step/java-racingcar-simple-playground",
-  javaLottoMission: "https://github.com/next-step/java-lotto-clean-playground",
-  javaLadderMission: "https://github.com/next-step/java-ladder-func-playground",
+    "https://github.com/cho-log/java-racingcar-simple-playground",
+  javaLottoMission: "https://github.com/cho-log/java-lotto-clean-playground",
+  javaLadderMission: "https://github.com/cho-log/java-ladder-func-playground",
   springRoomEscapeMission:
-    "https://github.com/next-step/spring-basic-roomescape-playground",
+    "https://github.com/cho-log/spring-basic-roomescape-playground",
   reactMovieReviewMission: "https://github.com/cho-log/self-paced-react",
 } as const;
