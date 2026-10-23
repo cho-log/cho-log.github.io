@@ -1,4 +1,4 @@
-name: 본인 활동 기록 삭제
+name: 내 활동 기록 삭제
 description: 삭제할 기존 활동 한 건을 지정합니다.
 title: "[활동 삭제] "
 labels: [archive-delete]

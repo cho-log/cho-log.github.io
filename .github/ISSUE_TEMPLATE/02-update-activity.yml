@@ -1,4 +1,4 @@
-name: 본인 활동 기록 수정
+name: 내 활동 기록 수정
 description: 기존 활동 한 건을 지정하고 수정 후 전체 정보를 작성합니다.
 title: "[활동 수정] "
 labels: [ archive-update ]
