@@ -71,6 +71,16 @@ const COURSES: Course[] = [
     ],
   },
   {
+    title: "미션으로 배우는 자바스크립트 기초",
+    target: "자바스크립트로 웹 애플리케이션을 구현해보고 싶은 사람",
+    points: [
+      "DOM과 이벤트를 활용한 화면 제어",
+      "게임 상태 관리와 입력값 검증",
+      "타이머를 활용한 비동기 처리",
+      "역할에 따른 함수 분리와 모듈화",
+    ],
+  },
+  {
     title: "미션으로 배우는 리액트 입문",
     target: "React를 처음 시작하는 입문자 대상",
     points: [
@@ -78,6 +88,26 @@ const COURSES: Course[] = [
       "기초적인 목록·모달·폼 UI 구현",
       "useState·useEffect를 활용한 상태 관리",
       "React 설계 원칙을 고려한 코드 작성",
+    ],
+  },
+  {
+    title: "미션으로 배우는 리액트 기초",
+    target: "React 입문을 마치고 애플리케이션을 확장하고 싶은 사람",
+    points: [
+      "styled-components를 활용한 컴포넌트 스타일링",
+      "Context API, Zustand, TanStack Query를 활용한 상태 관리",
+      "TypeScript와 React Router를 활용한 페이지 구성",
+      "웹 접근성 개선과 테스트 코드 작성",
+    ],
+  },
+  {
+    title: "미션으로 배우는 리액트 심화",
+    target: "React 앱 구현 경험이 있고 서버 사이드 렌더링을 배우고 싶은 사람",
+    points: [
+      "CSR과 SSR의 차이와 초기 로딩 과정 이해",
+      "서버에서 React 컴포넌트를 HTML로 렌더링",
+      "Hydration의 원리와 불일치 문제 해결",
+      "서버 데이터 전달과 요청 URL에 따른 화면 구성",
     ],
   },
 ];
@@ -238,14 +268,14 @@ export function StudyDetailSection() {
         </div>
       </section>
 
-      {/* 밴드 2 — 4개 과정 (B: bg-surface-container-low) */}
+      {/* 밴드 2 — 7개 과정 (B: bg-surface-container-low) */}
       <section className="bg-surface-container-low py-20">
         <div className="mx-auto max-w-5xl px-4 md:px-6">
           <h3 className="text-2xl font-bold tracking-tight text-on-surface md:text-3xl">
             초록스터디 과정
           </h3>
           <p className="mt-3 text-sm text-on-surface-variant md:text-base">
-            현재 자바·스프링·리액트 영역의 4개 과정이 운영되고 있습니다.
+            현재 자바·스프링·자바스크립트·리액트 영역의 7개 과정이 운영되고 있습니다.
           </p>
           <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
             {COURSES.map((course) => (
