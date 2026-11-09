@@ -23,5 +23,14 @@ export const SITE_LINKS = {
   javaLadderMission: "https://github.com/cho-log/java-ladder-func-playground",
   springRoomEscapeMission:
     "https://github.com/cho-log/spring-basic-roomescape-playground",
+  javascriptBaseballMission: "https://github.com/cho-log/javascript-baseball",
+  javascriptRouletteMission: "https://github.com/cho-log/javascript-roulette",
+  javascriptZombieSurvivalMission:
+    "https://github.com/cho-log/javascript-zombie-survival",
   reactMovieReviewMission: "https://github.com/cho-log/self-paced-react",
+  reactLunchAdvancedMission:
+    "https://github.com/cho-log/self-paced-react-advanced",
+  reactWhateverYouWantMission:
+    "https://github.com/cho-log/react-whatever-you-want",
+  reactPokemonSsrMission: "https://github.com/cho-log/react-pokemon-ssr",
 } as const;

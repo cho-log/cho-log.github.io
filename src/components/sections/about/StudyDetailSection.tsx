@@ -143,49 +143,91 @@ const LEARNING_TESTS = [
 
 type MissionGroup = {
   category: string;
-  note?: string;
-  layout: "grid" | "single";
   items: { emoji: string; label: string; href: string }[];
 };
 
-const MISSION_GROUPS: MissionGroup[] = [
+const MISSION_TABS: { id: string; label: string; groups: MissionGroup[] }[] = [
   {
-    category: "자바",
-    layout: "grid",
-    items: [
+    id: "java-spring",
+    label: "자바 / 스프링",
+    groups: [
       {
-        emoji: "🧮",
-        label: "계산기 미션",
-        href: SITE_LINKS.javaCalculatorMission,
+        category: "자바",
+        items: [
+          {
+            emoji: "🧮",
+            label: "계산기 미션",
+            href: SITE_LINKS.javaCalculatorMission,
+          },
+          {
+            emoji: "🏎️",
+            label: "자동차 경주 미션",
+            href: SITE_LINKS.javaRacingcarMission,
+          },
+          { emoji: "🎰", label: "로또 미션", href: SITE_LINKS.javaLottoMission },
+          { emoji: "🪜", label: "사다리 미션", href: SITE_LINKS.javaLadderMission },
+        ],
       },
       {
-        emoji: "🏎️",
-        label: "자동차 경주 미션",
-        href: SITE_LINKS.javaRacingcarMission,
+        category: "스프링",
+        items: [
+          {
+            emoji: "🔑",
+            label: "방탈출 미션",
+            href: SITE_LINKS.springRoomEscapeMission,
+          },
+        ],
       },
-      { emoji: "🎰", label: "로또 미션", href: SITE_LINKS.javaLottoMission },
-      { emoji: "🪜", label: "사다리 미션", href: SITE_LINKS.javaLadderMission },
     ],
   },
   {
-    category: "스프링",
-    layout: "single",
-    items: [
+    id: "javascript-react",
+    label: "자바스크립트 / 리액트",
+    groups: [
       {
-        emoji: "🔑",
-        label: "방탈출 미션",
-        href: SITE_LINKS.springRoomEscapeMission,
+        category: "자바스크립트",
+        items: [
+          {
+            emoji: "⚾",
+            label: "숫자 야구 미션",
+            href: SITE_LINKS.javascriptBaseballMission,
+          },
+          {
+            emoji: "🎡",
+            label: "탐욕의 룰렛 미션",
+            href: SITE_LINKS.javascriptRouletteMission,
+          },
+          {
+            emoji: "🧟",
+            label: "좀비 아포칼립스 미션",
+            href: SITE_LINKS.javascriptZombieSurvivalMission,
+          },
+        ],
       },
-    ],
-  },
-  {
-    category: "리액트",
-    layout: "single",
-    items: [
       {
-        emoji: "🍲",
-        label: "점심 뭐 먹지 미션",
-        href: SITE_LINKS.reactMovieReviewMission,
+        category: "리액트",
+        items: [
+          {
+            emoji: "🍲",
+            label: "점심 뭐 먹지 미션",
+            href: SITE_LINKS.reactMovieReviewMission,
+          },
+          {
+            emoji: "🍱",
+            label: "점심 뭐 먹지 고도화 미션",
+            href: SITE_LINKS.reactLunchAdvancedMission,
+          },
+          {
+            emoji: "🛠️",
+            label: "무엇이든 만들어보세요 미션",
+            href: SITE_LINKS.reactWhateverYouWantMission,
+          },
+          {
+            emoji: "🔎",
+            label: "포켓몬 도감 SSR 미션",
+            href: SITE_LINKS.reactPokemonSsrMission,
+          },
+        ],
       },
     ],
   },
@@ -504,56 +546,54 @@ function LearningTestCard() {
 
 function MissionRepoCard() {
   return (
-    <article className="flex flex-col rounded-lg bg-surface-container p-6">
+    <article className="@container flex flex-col rounded-lg bg-surface-container p-lg">
       <h4 className="text-lg font-semibold text-on-surface">미션 저장소</h4>
-      <div className="mt-5 grid gap-x-4 gap-y-5 sm:grid-cols-2">
-        {MISSION_GROUPS.map((group) => (
-          <div
-            key={group.category}
-            className={group.layout === "grid" ? "sm:col-span-2" : ""}
-          >
-            <div className="flex items-baseline gap-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-outline">
-                {group.category}
-              </span>
-              {group.note && (
-                <span className="text-xs text-on-surface-variant">
-                  {group.note}
-                </span>
-              )}
-            </div>
-            <ul
-              className={`mt-2.5 ${
-                group.layout === "grid"
-                  ? "grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2"
-                  : "flex flex-col gap-2"
-              }`}
-            >
-              {group.items.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 text-sm font-medium text-on-surface transition-colors hover:text-primary"
-                  >
-                    <span className="text-base" aria-hidden="true">
-                      {item.emoji}
-                    </span>
-                    <span>{item.label}</span>
-                    <span
-                      className="text-secondary transition-transform group-hover:translate-x-0.5"
-                      aria-hidden="true"
-                    >
-                      ↗
-                    </span>
-                  </a>
-                </li>
+      <CourseTabs
+        variant="underline"
+        tabListLabel="미션 저장소 분야"
+        idPrefix="mission"
+        className="mt-md"
+        tabs={MISSION_TABS.map((tab) => ({
+          id: tab.id,
+          label: tab.label,
+          content: (
+            <div className="grid grid-cols-1 gap-md @sm:grid-cols-2">
+              {tab.groups.map((group) => (
+                <div key={group.category}>
+                  <h5 className="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">
+                    {group.category}
+                  </h5>
+                  <ul className="mt-sm flex flex-col gap-md">
+                    {group.items.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group inline-flex max-w-full items-center gap-sm rounded-sm text-sm font-medium text-on-surface transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        >
+                          <span className="shrink-0 text-base" aria-hidden="true">
+                            {item.emoji}
+                          </span>
+                          <span className="min-w-0 wrap-anywhere">
+                            {item.label}
+                          </span>
+                          <span
+                            className="shrink-0 text-secondary transition-transform group-hover:translate-x-0.5"
+                            aria-hidden="true"
+                          >
+                            ↗
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+            </div>
+          ),
+        }))}
+      />
     </article>
   );
 }

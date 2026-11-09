@@ -8,9 +8,37 @@ type CourseTab = {
   content: ReactNode;
 };
 
-export function CourseTabs({ tabs }: { tabs: CourseTab[] }) {
+const TAB_STYLES = {
+  pill: {
+    list: "gap-sm",
+    button: "min-h-10 rounded-full border px-sm py-sm sm:px-lg",
+    active: "border-primary bg-primary text-on-primary",
+    inactive: "border-secondary text-secondary hover:bg-secondary-container",
+  },
+  underline: {
+    list: "gap-x-md gap-y-xs border-b border-outline-variant",
+    button: "-mb-px min-h-9 border-b-2 py-xs",
+    active: "border-primary text-primary",
+    inactive: "border-transparent font-medium text-on-surface-variant hover:text-primary",
+  },
+};
+
+export function CourseTabs({
+  tabs,
+  tabListLabel = "초록스터디 과정 분야",
+  idPrefix = "course",
+  className = "mt-8",
+  variant = "pill",
+}: {
+  tabs: CourseTab[];
+  tabListLabel?: string;
+  idPrefix?: string;
+  className?: string;
+  variant?: keyof typeof TAB_STYLES;
+}) {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const styles = TAB_STYLES[variant];
 
   function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     let nextIndex: number;
@@ -38,8 +66,12 @@ export function CourseTabs({ tabs }: { tabs: CourseTab[] }) {
   }
 
   return (
-    <div className="mt-8">
-      <div role="tablist" aria-label="초록스터디 과정 분야" className="flex flex-wrap gap-sm">
+    <div className={className}>
+      <div
+        role="tablist"
+        aria-label={tabListLabel}
+        className={`flex flex-wrap ${styles.list}`}
+      >
         {tabs.map((tab, index) => (
           <button
             key={tab.id}
@@ -48,16 +80,14 @@ export function CourseTabs({ tabs }: { tabs: CourseTab[] }) {
             }}
             type="button"
             role="tab"
-            id={`course-tab-${tab.id}`}
-            aria-controls={`course-panel-${tab.id}`}
+            id={`${idPrefix}-tab-${tab.id}`}
+            aria-controls={`${idPrefix}-panel-${tab.id}`}
             aria-selected={activeTab === tab.id}
             tabIndex={activeTab === tab.id ? 0 : -1}
             onClick={() => setActiveTab(tab.id)}
             onKeyDown={(event) => handleKeyDown(event, index)}
-            className={`min-h-10 rounded-full border px-sm py-sm text-label-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:px-lg ${
-              activeTab === tab.id
-                ? "border-primary bg-primary text-on-primary"
-                : "border-secondary text-secondary hover:bg-secondary-container"
+            className={`${styles.button} text-label-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+              activeTab === tab.id ? styles.active : styles.inactive
             }`}
           >
             {tab.label}
@@ -67,9 +97,9 @@ export function CourseTabs({ tabs }: { tabs: CourseTab[] }) {
       {tabs.map((tab) => (
         <div
           key={tab.id}
-          id={`course-panel-${tab.id}`}
+          id={`${idPrefix}-panel-${tab.id}`}
           role="tabpanel"
-          aria-labelledby={`course-tab-${tab.id}`}
+          aria-labelledby={`${idPrefix}-tab-${tab.id}`}
           hidden={activeTab !== tab.id}
           tabIndex={0}
           className="mt-lg"
